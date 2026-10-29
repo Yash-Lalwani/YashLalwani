@@ -19,6 +19,24 @@ s=re.sub(r'Th=typeof window.*?;let U2=0;', 'Th="local-portfolio-guide";let U2=0;
 s=s.replace('fetch(Th,{','portfolioReply(Th,{')
 # Apply ambient animation defaults before rendering bubbles, balloons, or lanterns.
 s=s.replace('yh[i.effect](s,i)', 'yh[i.effect](s,{...rh[i.effect].defaults,...i})')
+# Keep every local effect discoverable, with a new suggestion every 10 seconds.
+tips=['Make it snow!', 'Rain, please?', 'Throw confetti every time I move my mouse.',
+      *[f'Adopt a pet {pet} for me.' for pet in ['duck','cat','dog','turtle']],
+      'Release some balloons.', 'Bubbles!!!', 'Float some paper lanterns.',
+      'Turn off the lights, I have a flashlight.', 'Switch the fonts to comic sans.',
+      'Recolour the whole page teal.', 'Cut the gravity and let everything float.',
+      'Play the background music.', 'Do something fun with the website!',
+      'Take me to Yash’s projects.', "Where's his resume."]
+replace_between('const Ei=', 'function Sh(', 'const Ei='+js(tips)+';')
+starters=['What hackathons has Yash participated in?', 'How can I reach Yash?',
+          'Make it snow!', 'Do something fun with the website!',
+          'Cut the gravity and let everything float.']
+replace_between('const Eh=', ',Mh=', 'const Eh='+js([dict(n=f'{i:02}',prompt=p) for i,p in enumerate(starters,1)]))
+s=s.replace('_2=2e4', '_2=1e4')
+s=s.replace('le=M.useRef(!1),ve=M.useRef(0),', '')
+replace_between('const $=M.useCallback', 'ue=M.useCallback', '''const $=M.useCallback(()=>{Ne.current===null&&(Ne.current=Sh());const V=Ne.current.next();H.current=V,oe.current=!0,Y(V)},[]),P=M.useCallback(()=>{oe.current||$(),oe.current=!1,Y(H.current),N(!0)},[$]),ge=M.useRef(P);ge.current=P;const Le=M.useRef(q);Le.current=q,M.useEffect(()=>{if(!i||m)return;const V=setTimeout(()=>ge.current(),_2);return()=>clearTimeout(V)},[i,m,q,_]);const At=M.useCallback(()=>N(!1),[]),Bt=()=>{q||P()},Nt=V=>{var ne;V.stopPropagation(),d(Ei[_]),$(),At(),(ne=G.current)==null||ne.focus()},''')
+# Restore also stops music activated through chat.
+s=s.replace('new CustomEvent("lt-music-toggle")),bl("music")', 'new CustomEvent("lt-music-toggle")),Si(()=>document.querySelector(".music-player audio")?.pause()),bl("music")')
 reply=(root/'source/guide.js').read_text();s+='\n'+reply
 (root/'assets/portfolio.js').write_text(s)
 html='''<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#181818"><meta name="description" content="Yash Lalwani — Computer Science at Rutgers University. AI engineering, backend systems and research."><title>Yash Lalwani</title><link rel="icon" href="/assets/rutgers.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/index-D1X0x8YX.css"><link rel="stylesheet" href="/personal.css"><script type="module" src="/assets/portfolio.js"></script></head><body><div id="root"></div></body></html>'''
