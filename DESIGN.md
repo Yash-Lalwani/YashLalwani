@@ -3,4 +3,4 @@ The user explicitly requests the layout and visual behavior of https://jb-cheng.
 
 The delivered browser bundle is adapted from the reference's public frontend. `source/personalize.py` applies resume-backed content and replaces its remote chat transport with `source/guide.js`, a local rule-based guide. No requests are sent to the original owner's chat service. `source/illustrations.py` makes project architecture diagrams. Keep third-party library notices. Music credit remains Ad Astra — Steven Grove / MSR. This is not a claim that Yash authored the reference design or music.
 
-Known differences: personal content and project counts; custom project diagrams rather than product screenshots; personal signature reveals left-to-right; chat uses local matching, not an LLM. Pixel-diff parity is not established.
+Known differences: personal content and project counts; uploaded project screenshots with the original custom RAG-Engine diagram retained; personal signature reveals left-to-right; chat uses local matching, not an LLM. The decorative university webring and Rutgers favicon have been removed. Pixel-diff parity is not established.

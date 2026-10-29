@@ -9,3 +9,7 @@
 @media(prefers-reduced-motion:reduce){.transition-name .transition-tagline{animation:none}}
 
 .yash-signature .signature-replay{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;font-size:24px;line-height:1;flex-shrink:0}
+
+.project-card figure img.project-paper-preview{object-fit:contain;background:#fff}
+.project-paper-link{display:inline-block;margin:1rem 3rem 0 0;color:var(--lt-rust-dark);font-family:var(--lt-mono);font-size:.85rem;text-underline-offset:.25em}
+.project-paper-link:focus-visible{outline:2px solid currentColor;outline-offset:4px}

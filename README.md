@@ -15,7 +15,7 @@ Open http://localhost:8000 in your browser. Use a web server rather than double-
 - `index.html`, `personal.css`, `assets/`, and `resume.pdf`: complete ready-to-serve website.
 - `source/personalize.py`: editable resume content, experience entries, projects, and personalization rules.
 - `source/guide.js`: local portfolio chat responses and visual-effect commands.
-- `source/illustrations.py`: generates project architecture illustrations.
+- `source/illustrations.py`: generates the RAG-Engine and experience architecture illustrations.
 - `source/reference-app.js`: reference frontend bundle used by the personalization script.
 - `DESIGN.md`: design notes and known differences.
 
@@ -29,6 +29,8 @@ python3 source/illustrations.py
 ```
 
 Edit `personal.css` for CSS overrides. Replace `resume.pdf` to update your resume. Refresh the browser after changes.
+
+Project cards use the uploaded PNG screenshots in `assets/`, with `assets/rag.svg` retained for RAG-Engine. Update their order, descriptions, and links in the `projects` list in `source/personalize.py`. The F1 card also links to `F1_Project.pdf` in the repository root.
 
 ## Deploy
 
