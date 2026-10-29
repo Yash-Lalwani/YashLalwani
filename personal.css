@@ -13,3 +13,4 @@
 .project-card figure img.project-paper-preview{object-fit:contain;background:#fff}
 .project-paper-link{display:inline-block;margin:1rem 3rem 0 0;color:var(--lt-rust-dark);font-family:var(--lt-mono);font-size:.85rem;text-underline-offset:.25em}
 .project-paper-link:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.project-card figure img[src="/assets/rag.png"]{object-fit:contain;background:#f7f9fc}
