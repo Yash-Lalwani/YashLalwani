@@ -17,6 +17,8 @@ for a,b in [('https://www.linkedin.com/in/jb-cheng/','https://linkedin.com/in/ya
 # Never send user chat to the reference owner's backend.
 s=re.sub(r'Th=typeof window.*?;let U2=0;', 'Th="local-portfolio-guide";let U2=0;',s)
 s=s.replace('fetch(Th,{','portfolioReply(Th,{')
+# Apply ambient animation defaults before rendering bubbles, balloons, or lanterns.
+s=s.replace('yh[i.effect](s,i)', 'yh[i.effect](s,{...rh[i.effect].defaults,...i})')
 reply=(root/'source/guide.js').read_text();s+='\n'+reply
 (root/'assets/portfolio.js').write_text(s)
 html='''<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#181818"><meta name="description" content="Yash Lalwani — Computer Science at Rutgers University. AI engineering, backend systems and research."><title>Yash Lalwani</title><link rel="icon" href="/assets/rutgers.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/index-D1X0x8YX.css"><link rel="stylesheet" href="/personal.css"><script type="module" src="/assets/portfolio.js"></script></head><body><div id="root"></div></body></html>'''
