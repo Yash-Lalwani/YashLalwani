@@ -2,3 +2,8 @@
 
 .yash-signature>span{line-height:1.25}i.yash-signature{display:flex}
 @media(max-width:600px){.name{font-size:clamp(3rem,17vw,5.1rem)!important;letter-spacing:-.055em!important}.subtitle{max-width:76vw!important}}
+
+.transition-name{font-size:clamp(2rem,10vw,10rem)!important}
+.transition-name .transition-tagline{display:block;max-width:calc(100vw - 2rem);margin:.85em auto 0;font-size:clamp(.7rem,1.4vw,1.3rem);font-weight:400;line-height:1.6;letter-spacing:.04em;white-space:normal;text-wrap:balance;text-shadow:none;animation:tagline-reveal .6s ease-out .15s both}
+@keyframes tagline-reveal{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.transition-name .transition-tagline{animation:none}}
