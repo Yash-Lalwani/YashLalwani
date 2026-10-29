@@ -1,0 +1,4 @@
+.yash-signature{display:flex;align-items:center;justify-content:center;position:relative;min-height:80px}.yash-signature>span{font-family:'Ms Madi',cursive;font-size:clamp(48px,5vw,78px);white-space:nowrap;display:inline-block}.signature-write{animation:signature-write 2.22s linear both}@keyframes signature-write{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}.yash-signature .signature-replay{position:relative;margin-left:10px}.transition-name{white-space:nowrap}.project-card figure img{width:100%;height:100%;object-fit:cover}@media(max-width:600px){.subtitle{white-space:normal!important;max-width:90vw;font-size:1rem!important}.transition-name{font-size:12vw!important}}@media(prefers-reduced-motion:reduce){.signature-write{animation:none}}
+
+.yash-signature>span{line-height:1.25}i.yash-signature{display:flex}
+@media(max-width:600px){.name{font-size:clamp(3rem,17vw,5.1rem)!important;letter-spacing:-.055em!important}.subtitle{max-width:76vw!important}}
